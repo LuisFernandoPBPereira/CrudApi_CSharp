@@ -6,6 +6,7 @@ namespace CRUDapi.Data.Map
 {
     public class UsuarioMap : IEntityTypeConfiguration<UsuarioModel>
     {
+        //Mapeamos os usuários para o banco de dados
         public void Configure(EntityTypeBuilder<UsuarioModel> builder)
         {
             builder.HasKey(x => x.Id);

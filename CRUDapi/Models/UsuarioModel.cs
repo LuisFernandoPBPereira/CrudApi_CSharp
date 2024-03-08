@@ -1,5 +1,6 @@
 ﻿namespace CRUDapi.Models
 {
+    //Estrutura de Usuario
     public class UsuarioModel
     {
         public int Id { get; set; }

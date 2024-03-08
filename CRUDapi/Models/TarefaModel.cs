@@ -2,6 +2,7 @@
 
 namespace CRUDapi.Models
 {
+    //Estrutura da Tarefa
     public class TarefaModel
     {
         public int Id { get; set; }

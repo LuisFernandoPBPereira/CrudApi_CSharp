@@ -20,6 +20,10 @@ namespace CRUDapi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            /*
+             * O builder do entity framework é configurado, adicionando o contexo do banco
+             * e usando a string de conexão que será capturada do arquivo appsettings.json
+            */
             builder.Services.AddEntityFrameworkSqlServer().
                 AddDbContext<SistemaDeTarefasDBContext>(
                     options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"))

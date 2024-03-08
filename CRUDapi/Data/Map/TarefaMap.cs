@@ -6,6 +6,7 @@ namespace CRUDapi.Data.Map
 {
     public class TarefaMap : IEntityTypeConfiguration<TarefaModel>
     {
+        //Mapeamos os usuários para o banco de dados
         public void Configure(EntityTypeBuilder<TarefaModel> builder)
         {
             builder.HasKey(x => x.Id);

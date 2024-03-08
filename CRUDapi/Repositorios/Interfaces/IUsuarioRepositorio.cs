@@ -2,6 +2,7 @@
 
 namespace CRUDapi.Repositorios.Interfaces
 {
+    //Criamos a interface para fazermos as requisições em UsuarioRepositorio
     public interface IUsuarioRepositorio
     {
         Task<List<UsuarioModel>> BuscarTodosUsuarios();
