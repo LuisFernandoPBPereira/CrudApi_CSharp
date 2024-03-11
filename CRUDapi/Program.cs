@@ -1,9 +1,13 @@
 
 using CRUDapi.Data;
+using CRUDapi.Integracao;
+using CRUDapi.Integracao.Interfaces;
+using CRUDapi.Integracao.Refit;
 using CRUDapi.Repositorios;
 using CRUDapi.Repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Refit;
 
 namespace CRUDapi
 {
@@ -30,6 +34,13 @@ namespace CRUDapi
                 );
             //Para injeção de dependências
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<IViacepIntegracao, ViacepIntegracao>();
+
+            //Configuração do cliente HTTPS do Refit
+            builder.Services.AddRefitClient<IViacepIntegracaoRefit>().ConfigureHttpClient(c =>
+            {
+                c.BaseAddress = new Uri("https://viacep.com.br");
+            });
 
             var app = builder.Build();
 
