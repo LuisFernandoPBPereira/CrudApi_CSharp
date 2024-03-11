@@ -34,6 +34,7 @@ namespace CRUDapi
                 );
             //Para injeção de dependências
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+            builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>();
             builder.Services.AddScoped<IViacepIntegracao, ViacepIntegracao>();
 
             //Configuração do cliente HTTPS do Refit
